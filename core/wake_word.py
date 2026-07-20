@@ -1,11 +1,15 @@
 from core.voice import listen
+from core.speaker import speak
 
 wake_words = [
     "василич",
     "василь",
     "василье",
     "васик",
-    "васильевич"
+    "васильевич",
+    "vasile",
+    "Васи"
+
 ] 
 
 def wait_wake_word():
@@ -14,5 +18,4 @@ def wait_wake_word():
         text = listen()
 
         if text in wake_words:
-            print("🟢 Василич тута!")
             break

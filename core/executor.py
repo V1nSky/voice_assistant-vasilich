@@ -1,5 +1,6 @@
 from commands.commands import commands
 from core.command import wait_command
+from core.speaker import speak
 import sys
 
 def execute():
@@ -9,7 +10,7 @@ def execute():
     found = False
 
     if "выход" in text:
-        print("Пора на боковую..")
+        speak("Выключаюсь..")
         sys.exit()
     for command in commands:
         print("Проверяю команду:", command)
@@ -23,5 +24,5 @@ def execute():
             break
 
     if not found:
-        print("❌ Не знаю такую команду")
+        speak("Не знаю такую команду")
 

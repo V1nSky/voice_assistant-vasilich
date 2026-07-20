@@ -1,5 +1,6 @@
+from core.speaker import speak
 import speech_recognition as sr
-import pyaudio
+
 
 def listen():
     recognizer = sr.Recognizer()
@@ -9,10 +10,8 @@ def listen():
 
     try:
         text = recognizer.recognize_google(audio, language="ru-RU")
-        print(f"Ты сказал: {text}")
         return text.lower()
 
     except:
-        print("Не расслышал 😅")
         return ""
     
